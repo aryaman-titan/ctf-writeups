@@ -58,7 +58,7 @@ On looking up about `DOMDocument::loadXML()` online, I found some interesting [b
 
 # Exploitation
 
-Now that we know, it's accepting XML data and parsing them using `DOMDocument::loadXML()``, let's try to exploit it using XXE(XML External Entity injection)
+Now that we know, it's accepting XML data and parsing them using `DOMDocument::loadXML()`, let's try to exploit it using XXE(XML External Entity injection)
 
 Payload: 
 
