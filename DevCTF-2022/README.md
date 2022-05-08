@@ -11,7 +11,7 @@ jeopardy format, organized by **DevClub, IIT Delhi**.
 |:calling: android      | [PinBreak](android/PinBreak)                                             | 5    | 
 |:calling: android      | [Lit-Part1](android/Lit-Part1)                                                 | 8    | 
 |:calling: android      | [Lit-Part2](android/Lit-Part2)                                         | 10    | 
-|:calling: android      | [Bonjour](android/Bonjour)                   | 12    | 
+|:calling: android      | [Bonjour](android/bonjour)                   | 12    | 
 |:calling: android      | [soDifficult](android/soDifficult)                                       | 25    | 
 |:spider_web: web      | [TheGoodOldDays](web/TheGoodOldDays)                                             | 3    | 
 |:spider_web: web      | [UnChangeablePasswords](web/UnChangeablePasswords)                                                   | 5    | 
