@@ -22,7 +22,7 @@ Consider me biased, but this application running in Flask (python) pushed me to 
 
 We can see that, we've got successful SSTI, as our payload is being processed by the server. Let's refer to the [ocean of payloads](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#jinja2) for further escalation.
 
-Tired of burp, huh?? Let me introduce my another favourite REST API client, **Thunderbird**. It's a light VSCode extension, so that I won't have to switch windows/tabs while playing around with requests.
+Tired of burp, huh?? Let me introduce my another favourite REST API client, **Thunder Client**. It's a light VSCode extension, so that I won't have to switch windows/tabs while playing around with requests.
 
 # Exploitation
 

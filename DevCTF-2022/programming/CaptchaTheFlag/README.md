@@ -33,7 +33,7 @@ URL = 'https://web.ctf.devclub.in/dev/4/'
 def save_to_disk(byts):
     stream = io.BytesIO(byts)
     img = Image.open(stream)
-    text = pytesseract.image_to_string(img)
+    text = pytesseract.image_to_string(img).strip()
     return text
 
 def attack():
