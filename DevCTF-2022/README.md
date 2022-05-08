@@ -20,7 +20,7 @@ jeopardy format, organized by **DevClub, IIT Delhi**.
 |:spider_web: web      | [TheSequel](web/TheSequel)                                       | 18    | 
 |:spider_web: web      | [CipherText](web/CipherText)         | 20    | 
 |:spider_web: web      | [FlagAuction](web/FlagAuction)               | 20    | 
-|:hammer_and_wrench: rev      | [GetArgs](rev/GetArgs)                                                       | 5    | 
+|:hammer_and_wrench: rev      | [GetArgs](rev/getargs)                                                       | 5    | 
 |:hammer_and_wrench: rev   | [ExcessChars](rev/ExcessChars)                                      | 8    | 
 |:hammer_and_wrench: rev   | [TenLittlePhrases](rev/TenLittlePhrases)                    | 15    | 
 |:window: winrev      | [Payload](winrev/Payload)                           | 4    | 
