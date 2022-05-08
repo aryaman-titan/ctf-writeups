@@ -4,8 +4,7 @@ Simple crackme kinda challenge.
 
 On executing, it asks for an input, and entering random values gives wrong password.
 
-I used `Ghidra` for decompiling the program. The   
-
+I used `Ghidra` for decompiling the program. Here's the useful code
 ```c
     if (**(char **)(param_2 + 8) == '\0') {
       uVar3 = 0xffffffff;
