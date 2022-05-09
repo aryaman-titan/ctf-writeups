@@ -30,6 +30,6 @@ Opening it in any SQLiteDB browser, and then browsing the data of `pinDB`, we fo
 
 Now since we have the hash of the password, let's try to get the password using [crackstation](https://crackstation.net/), we get the PIN as 9264.
 
-Running the app in genymotion or any android emulator, entered the PIN and got the flag!
+Run the app in genymotion or any android emulator, entered the PIN and got the flag!
 
 Flag: ```ctf{Th@ts_H0w_y0U_br3@k_p!ns}```

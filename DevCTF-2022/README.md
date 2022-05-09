@@ -9,12 +9,12 @@ jeopardy format, organized by **DevClub, IIT Delhi**.
 | -------- | -------------------------------------------------------------------- | ------ | 
 |:computer: programming      | [CaptchaTheFlag](programming/CaptchaTheFlag)                                         | 15    | 
 |:calling: android      | [PinBreak](android/pinbreak)                                             | 5    | 
-|:calling: android      | [Lit-Part1](android/Lit-Part1)                                                 | 8    | 
-|:calling: android      | [Lit-Part2](android/Lit-Part2)                                         | 10    | 
+|:calling: android      | [Lit-Part1](android/lit)                                                 | 8    | 
+|:calling: android      | [Lit-Part2](android/lit)                                         | 10    | 
 |:calling: android      | [Bonjour](android/bonjour)                   | 12    | 
 |:calling: android      | [soDifficult](android/sodifficult)                                       | 25    | 
-|:spider_web: web      | [TheGoodOldDays](web/TheGoodOldDays)                                             | 3    | 
-|:spider_web: web      | [UnChangeablePasswords](web/UnChangeablePasswords)                                                   | 5    | 
+|:spider_web: web      | [TheGoodOldDays](web/thegoodoldDays)                                             | 3    | 
+|:spider_web: web      | [UnChangeablePasswords](web/unchangeablepasswords)                                                   | 5    | 
 |:spider_web: web      | [ManDir](web/ManDir)                                             | 15    | 
 |:spider_web: web      | [ScientificHashes](web/ScientificHashes)                                       | 15    | 
 |:spider_web: web      | [TheSequel](web/TheSequel)                                       | 18    | 
