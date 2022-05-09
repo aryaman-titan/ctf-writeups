@@ -2,57 +2,49 @@
 
 Seems like a simple buffer overfow challenge from the name.
 
-On executing, it asks for an input, and entering random values gives wrong password.
-
-I used `Ghidra` for decompiling the program. Here's the useful code
-```c
-    if (**(char **)(param_2 + 8) == '\0') {
-      uVar3 = 0xffffffff;
-    }
-    else {
-      for (local_24 = 0;
-          ("AJi9VL0C4p"[local_24] != '\0' &&
-          (*(char *)((long)local_24 + *(long *)(param_2 + 8)) != '\0')); local_24 = local_24 + 1) {
-        cVar1 = "AJi9VL0C4p"[local_24];
-        iVar2 = QM9Nq();
-        if (cVar1 - iVar2 != (int)*(char *)((long)local_24 + *(long *)(param_2 + 8))) {
-          printf("No, %s is not correct.\n",*(undefined8 *)(param_2 + 8));
-          return 1;
-        }
-      }
-      printf("Yes, %s is correct!\n",*(undefined8 *)(param_2 + 8));
-      uVar3 = 0;
-    }
-```
-
-
-It looks very complex, but the code is just looping over all the characters of our input and comparing it with a constant string `AJi9VL0C4p` with some offset.  
-This offset is calculated with another function which is given below.
+I opened up `IDA` for decompiling the program and went straight to the main function. Here's the useful code
 
 ```c
-int QM9Nq(void)
+int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
 {
-  int local_1c;
-  
-  for (local_1c = 1; (local_1c < 0xb && (((local_1c % 0xb) * 4) % 0xb != 1));
-      local_1c = local_1c + 1) {
-  }
-  return local_1c;
+    getInput();
+    putchar(10);
+    exit(0);
 }
 ```
 
-I saved it as offset.c and ran it with gcc and got the output simply as `3`.
+There's also a suspicious function `printFlag`. On decompiling it, we get the following pseudo code:
 
+![IDA-1](ida-1.png)
+
+- This function won't allow me to use a debugger. Our target is to either call the `printFlag` function or the `decryptAndPrint` function.
+
+- Calling the decryptAndPrint() directly with the use of gdb prints gibberish as the flag, for some reason.
+
+- At this point, it felt like there was no where to go, because I didn't use any debugger except gdb for binaries.
+
+- I realized that I can always the modify the values from GDB, be it the case of checking if we're using debugger or not.
+
+- I changed the flag variable used to trigger the `if` condition by setting `$(eax) to 0`
+
+Note: I also read something about [PTRACE bypass](https://gist.github.com/poxyran/71a993d292eee10e95b4ff87066ea8f2) here. 
 # Final exploit
 
 ```c
-int main(){
-    char str1[] = "AJi9VL0C4p";
-    for(int i=0;i<strlen(str1);i++){
-        putchar(str1[i]+QM9Nq());
-    }
-    return 0;
-}
+(gdb) p ($eax)
+$1 = -1
+(gdb) set ($eax)=0
+(gdb) p ($eax)
+$2 = 0
+(gdb) n
+Single stepping until exit from function ptrace,
+which has no line number information.
+printFlag () at crackme2.c:25
+25	in crackme2.c
+(gdb) n
+Maybe you are in the right path ??
+
+Flag you got is : 3xpl0!t_Rev3rs!nG_3G
 ```
 
-So, we got the password as `>Gf6SI-@1m`. This turned out to be the flag.
+So yeah, now we have the flag: `CTF{3xpl0!t_Rev3rs!nG_3G}`

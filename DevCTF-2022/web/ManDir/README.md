@@ -52,6 +52,10 @@ We see that here's a gz file named `/usr/share/man/man1/pandoc.1.gz`
 <script type="text/plain" src="file:///usr/share/man/man1/pandoc.1.gz"></script>
 ```
 
+Note: gz file is automatically decompressed after receiving due to this header
+
+```Accept-encoding: gzip, deflate``` 
+
 Tadaaa....here we have the flag! This was a medium level challenge, which can be challenging for beginners to figure out. Kudos to the organizers!
 
 ![Flag](flag.png)

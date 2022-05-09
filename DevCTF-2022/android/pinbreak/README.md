@@ -24,7 +24,7 @@ On looking for some interesting files in the directory, I found a SQLite DB
 assets/pinlock.db: SQLite 3.x database, last written using SQLite version 3035005
 ```
 
-Opening it in any SQLiteDB browser, and then browsing the data of `pinDB`, we found a md5 hash `bae5c9d883433f2d1e926ef693831dafa1664306`.
+Opening it in any SQLiteDB browser, and then browsing the data of `pinDB`, we found a sha1 hash `bae5c9d883433f2d1e926ef693831dafa1664306`.
 
 # Exploitation
 
