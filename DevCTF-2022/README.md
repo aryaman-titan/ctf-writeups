@@ -23,10 +23,10 @@ jeopardy format, organized by **DevClub, IIT Delhi**.
 |:hammer_and_wrench: rev      | [GetArgs](rev/getargs)                                                       | 5    | 
 |:hammer_and_wrench: rev   | [ExcessChars](rev/excesschars)                                      | 8    | 
 |:hammer_and_wrench: rev   | [TenLittlePhrases](rev/tenlittlephrases)                    | 15    | 
-|:window: winrev      | [Payload](winrev/Payload)                           | 4    | 
-|:window: winrev      | [Mutex](winrev/Mutex)                                                 | 4    | 
-|:window: winrev      | [WhichAddress?](winrev/WhichAddress?)                               | 4    | 
-|:window: winrev      | [Privileged](winrev/Privileged)                                         | 4    | 
-|:window: winrev   | [LevelUp](winrev/LevelUp)                                  | 5    | 
-|:window: winrev      | [DropThis](winrev/DropThis)                                   | 5    | 
-|:window: winrev     | [SHA-1](winrevisc/SHA-1)                | 5    | 
+|:window: winrev      | [Payload](winrev/)                           | 4    | 
+|:window: winrev      | [Mutex](winrev/)                                                 | 4    | 
+|:window: winrev      | [WhichAddress?](winrev/)                               | 4    | 
+|:window: winrev      | [Privileged](winrev/)                                         | 4    | 
+|:window: winrev   | [LevelUp](winrev/)                                  | 5    | 
+|:window: winrev      | [DropThis](winrev/)                                   | 5    | 
+|:window: winrev     | [SHA-1](winrev/)                | 5    | 
