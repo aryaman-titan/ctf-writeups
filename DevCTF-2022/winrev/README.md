@@ -8,7 +8,7 @@ In this challenge, we deal with some (malicious?) payload. The challenge need th
 
 ![payload](payload.png)
 
-```
+```java
 hResInfo = FindResourceW(::hModule, (LPCWSTR)0x66, L"asdasdasdasdsad");
 ```
 
@@ -19,7 +19,7 @@ Gotcha! The flag is `asdasdasdasdsad`
 
 We need the name of the mutex used by malware. On decompiling the function `sub_10002300`, we can find that.
 
-```
+```java
 hObject = CreateMutexA(0, 0, "avcjkvcnmvcnmcvnmjdfkjfd");
 ```
 
@@ -28,13 +28,13 @@ which gives the mutex name as `avcjkvcnmvcnmcvnmjdfkjfd` --> turned out to be th
 
 ## WhichAddress
 
-Here, we need to get the WinAPI function, that is sent to `CreateRemoteThreadAPI` as a 4th param at `0x10002174`
+Here, we need to get the WinAPI function, that is sent to `CreateRemoteThread API` as a 4th param at `0x10002174`
 
 Peeking at this particular location using IDA Pro, we find the following code
 
-```
+```java
 hHandle = CreateRemoteThread(hProcess, 0, 0, lpStartAddress, lpAddress, 0, ThreadId);
-where,
+
 lpStartAddress = (LPTHREAD_START_ROUTINE)GetProcAddress(hModule, "LoadLibraryA");
 ```
 
@@ -43,9 +43,9 @@ lpStartAddress = (LPTHREAD_START_ROUTINE)GetProcAddress(hModule, "LoadLibraryA")
 
 ## Privileged
 
-Here, we have to find the privileges gained by the malware. Again, we need to explore through the code using IDA Pro. I found a function `sub_100019a0` which contains
+Here, we need to trace the privileges gained by the malware. Let's use IDA Pro. I found a function `sub_100019a0` which contains
 
-```
+```java
 if ( OpenProcessToken(CurrentProcess, 0x28u, &TokenHandle) )
   {
     LookupPrivilegeValueA(0, "SeDebugPrivilege", &NewState.Privileges[0].Luid);
@@ -55,23 +55,26 @@ if ( OpenProcessToken(CurrentProcess, 0x28u, &TokenHandle) )
   }
 ```
 
-So, it is clear that the token privilege gained by the malware is `SeDebugPrivilege`
+Now, it's evident that privilege gained by the malware is `SeDebugPrivilege`
 
 ## DropThis
 
-Now, we need to find the file name of the dropped payload. On decompiling the function
-`sub_10002250`, we find that 
-```
-sub_10002B3B(a3, 260, "iexplore-1.dat"); 
-```                                     
-So, the filename is `iexplore-1.dat`
+Now, we need file name of dropped payload. On decompiling the function `sub_10002250`, we find 
 
+```java
+sub_10002B3B(a3, 260, "iexplore-1.dat"); 
+```                  
+
+We have our next flag, `iexplore-1.dat`
 
 ## LevelUp
 
-Here, we need to find the process in which tries to inject the dropped payload. So, this is easy as well. Since the injected payload was iexplore-1.dat, I googled it to find the process name and luckily it came out to be `iexplore.exe` which is the flag.
-
-
+Here, we need the process which injects the dropped payload. As the injected payload was `iexplore-1.dat`, I looked up online for the process name , which resulted in `iexplore.exe`. I was not very sure of it, but I tried, and it turned out to be the flag.
 ## SHA1
 
-I loaded the dll in the site https://manalyzer.org/ which gives various details including the SHA1 hash of dropped payload. Navigate to the resources section and get the hash
+I uploaded the dll in this site [manalyzer](https://manalyzer.org/) which gave out various details including the SHA1 hash of dropped payload `iexplore-1.dat`.
+
+![manal](manal.png)
+
+Flag: `f7e6f03511bd0a9ccc8f5253007e4505152a7453`
+
