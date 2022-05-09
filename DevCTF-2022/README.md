@@ -21,8 +21,8 @@ jeopardy format, organized by **DevClub, IIT Delhi**.
 |:spider_web: web      | [CipherText](web/CipherText)         | 20    | 
 |:spider_web: web      | [FlagAuction](web/FlagAuction)               | 20    | 
 |:hammer_and_wrench: rev      | [GetArgs](rev/getargs)                                                       | 5    | 
-|:hammer_and_wrench: rev   | [ExcessChars](rev/ExcessChars)                                      | 8    | 
-|:hammer_and_wrench: rev   | [TenLittlePhrases](rev/TenLittlePhrases)                    | 15    | 
+|:hammer_and_wrench: rev   | [ExcessChars](rev/excesschars)                                      | 8    | 
+|:hammer_and_wrench: rev   | [TenLittlePhrases](rev/tenlittlephrases)                    | 15    | 
 |:window: winrev      | [Payload](winrev/Payload)                           | 4    | 
 |:window: winrev      | [Mutex](winrev/Mutex)                                                 | 4    | 
 |:window: winrev      | [WhichAddress?](winrev/WhichAddress?)                               | 4    | 
