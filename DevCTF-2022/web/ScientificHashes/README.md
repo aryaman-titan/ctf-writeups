@@ -19,7 +19,7 @@ The given hints seem to indicate that of a PHP type juggling vulnerability.
 PHP will do just about anything to match with a loose comparison (==) which means things can be 'equal' (==) or really equal (===). The implicit integer parsing to strings is the root cause of a lot of issues in PHP.
 
 
-
+We can also see that there's a cookie named `Salt` set to `f789bbc328a3d1a3`, which confirms our suspicion.
 # Exploitation
 
 ```py
