@@ -57,6 +57,7 @@ Part 1: `https://mongodb-e98ea-default-rtdb.firebaseio.com/rCpOr6eRlLDWW0pfAeQV/
 Part 2: `https://mongodb-e98ea-default-rtdb.firebaseio.com/flag.json`
 
 Lit-Part1: ```ctf{d0n't_g1ve_us3rs_fireb@sedb_acc33s}```
+
 Lit-Part2: ```ctf{fireb@s3-mi$sconfigurati0n}```
 
 It would be interesting to see, what the intended exploit for this challenge would be?!
