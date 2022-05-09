@@ -28,7 +28,7 @@ There's also a suspicious function `printFlag`. On decompiling it, we get the fo
 - I changed the flag variable used to trigger the `if` condition by setting `$(eax) to 0`
 
 Note: I also read something about [PTRACE bypass](https://gist.github.com/poxyran/71a993d292eee10e95b4ff87066ea8f2) here. 
-# Final exploit
+## Exploit
 
 ```c
 (gdb) p ($eax)
